@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -13,8 +14,13 @@ class ContactController extends Controller
 
     public function store()
     {
-        $email = request('email');
+        request()->validate(['email' => 'required|email']);
 
-        dd($email);
+        Mail::raw('It works', function($message) {
+            $message->to(request('email'))
+                ->subject('Hello there');
+        });
+
+        return redirect('/contact');
     }
 }

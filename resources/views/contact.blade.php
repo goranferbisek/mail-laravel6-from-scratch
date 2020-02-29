@@ -61,6 +61,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .errors {
+                color: red;
+                font-size: small;
+            }
         </style>
     </head>
     <body>
@@ -70,9 +75,16 @@
                 <form action="/contact" method="post">
                     @csrf
 
-                    <label for="email">Email address</label>
-                    <input type="email" name="email" id="email">
+                    <div>
+                        <label for="email">Email address</label>
+                        <input type="text" name="email" id="email">
 
+                        @error('email')
+                            <div class="errors">
+                              {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                     <button type="submit">Email me</button>
 
                 </form>
