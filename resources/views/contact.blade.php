@@ -87,6 +87,12 @@
                     </div>
                     <button type="submit">Email me</button>
 
+                    @if (session('message'))
+                        <div style="color:green;font-size:large;">
+                            <b>{{ session('message') }}</b>
+                        </div>
+                    @endif
+
                 </form>
 
             </div>

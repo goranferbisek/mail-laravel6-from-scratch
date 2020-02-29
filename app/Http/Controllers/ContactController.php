@@ -21,6 +21,7 @@ class ContactController extends Controller
                 ->subject('Hello there');
         });
 
-        return redirect('/contact');
+        return redirect('/contact')
+            ->with('message', 'Email sent!');
     }
 }
