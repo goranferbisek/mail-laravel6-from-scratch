@@ -19,7 +19,7 @@ class ContactMe extends Mailable
      *
      * @return void
      */
-    public function __construct($topic)
+    public function __construct(string $topic)
     {
         $this->topic = $topic;
     }
@@ -31,6 +31,7 @@ class ContactMe extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contact-me');
+        return $this->view('emails.contact-me')
+            ->subject('More information about ' . $this->topic);
     }
 }
