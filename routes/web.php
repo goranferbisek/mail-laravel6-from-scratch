@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/contact', 'ContactController@show');
 Route::post('/contact', 'ContactController@store');
+
+Route::get('/payments/create', 'PaymentsController@create');
+Route::post('/payments', 'PaymentsController@store');
