@@ -11,14 +11,17 @@ class ContactMe extends Mailable
 {
     use Queueable, SerializesModels;
 
+    // Mailable classes: any public property is instantly available to the view
+    public $topic;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($topic)
     {
-        //
+        $this->topic = $topic;
     }
 
     /**

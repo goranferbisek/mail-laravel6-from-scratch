@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>It works again.</h1>
-    <p>This is an email from a HTML template (Blade view)</p>
+    <p>Sounds like you want to hear more about {{ $topic }}</p>
 </body>
 </html>
