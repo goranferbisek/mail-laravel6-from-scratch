@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>It works again.</h1>
-    <p>Sounds like you want to hear more about {{ $topic }}</p>
-</body>
-</html>
+@component('mail::message')
+# Aprilia motorcycles
+
+We have many models of our motorcycles that you will want to buy.
+
+- RSV4
+- Tuono V4 1100
+- Tuono 660
+- Shiver
+- Caponord
+
+@component('mail::button', ['url' => 'https://www.aprilia.com/en_EN/models/motorbikes/'])
+See all models
+@endcomponent
+
+@endcomponent
