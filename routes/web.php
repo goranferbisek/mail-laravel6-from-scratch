@@ -20,3 +20,5 @@ Route::post('/contact', 'ContactController@store');
 
 Route::get('/payments/create', 'PaymentsController@create');
 Route::post('/payments', 'PaymentsController@store');
+
+Route::get('/notifications', 'UserNotificationsController@show');
