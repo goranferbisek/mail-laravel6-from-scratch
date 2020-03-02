@@ -13,11 +13,8 @@ class UserNotificationsController extends Controller
         // manualy made a user with tinker
         $user = User::first();
 
-        $notifications = $user->unreadNotifications;
-        $notifications->markAsRead();
-
         return view('notifications.show', [
-            'notifications' => $notifications
+            'notifications' => tap($user->unreadNotifications)->markAsRead()
         ]);
     }
 }
