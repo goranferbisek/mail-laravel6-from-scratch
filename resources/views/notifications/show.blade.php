@@ -80,7 +80,7 @@
             <div class="content">
             <h1>Notifications</h1>
             <ul>
-                @foreach ($notifications as $notification)
+                @forelse ($notifications as $notification)
                     <li>
                         @if($notification->type
                                 === 'App\Notifications\PaymentRecieved')
@@ -89,7 +89,9 @@
                             dollars from you.
                         @endif
                     </li>
-                @endforeach
+                @empty
+                    <li>You have no unread notifications at this time.</li>
+                @endforelse
             </ul>
             </div>
         </div>
