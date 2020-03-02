@@ -22,7 +22,7 @@ class PaymentsController extends Controller
         // manualy made a user with tinker
         $user = User::first();
 
-        Notification::send($user, new PaymentRecieved());
+        Notification::send($user, new PaymentRecieved(500));
 
         return redirect('/payments/create');
     }
