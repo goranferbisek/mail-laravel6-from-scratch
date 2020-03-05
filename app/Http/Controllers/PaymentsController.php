@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProductPurchased;
 use App\User;
 use Illuminate\Http\Request;
 use App\Notifications\PaymentRecieved;
@@ -20,10 +21,12 @@ class PaymentsController extends Controller
 
         // no authentication used as in laracast video
         // manualy made a user with tinker
-        $user = User::first();
+        // $user = User::first();
 
-        Notification::send($user, new PaymentRecieved(500));
+        // Notification::send($user, new PaymentRecieved(500));
 
-        return redirect('/payments/create');
+        // return redirect('/payments/create');
+
+        ProductPurchased::dispatch('toy');
     }
 }
