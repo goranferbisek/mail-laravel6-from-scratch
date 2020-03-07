@@ -21,10 +21,6 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        ProductPurchased::class => [
-            AwardAchievement::class,
-            SendShearableCoupon::class
-        ]
     ];
 
     /**
@@ -37,5 +33,10 @@ class EventServiceProvider extends ServiceProvider
         parent::boot();
 
         //
+    }
+
+    public function shouldDiscoverEvents()
+    {
+        return true;
     }
 }
